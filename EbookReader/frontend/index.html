@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studify</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="body">
+        <div>
+            <h1>Welcome to <span style="color: #007bff;">EduManage</span></h1>
+            <h3>Your Ultimate Student Management System</h3>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li onclick="openModal('add-student-modal')">
+                        <img src="user_student.png" /><br/>Create Student Profile
+                    </li>
+                    <li onclick="openModal('total-student-modal')">
+                        <img src="185578.png"/><br/>Total Students
+                    </li>
+                    <li onclick="openModal('attendance-marks-modal')">
+                        <img src="forbidden.png"/><br/>Attendance Marks
+                    </li>
+                    <li onclick="openModal('student-profile-modal')">
+                        <img src="2016366.png"/><br/>Student Profile
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Modal for Create Student Profile -->
+    <div id="add-student-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('add-student-modal')">&times;</span>
+            <h2>Create Student Profile</h2>
+            <form id="student-form">
+                <div class="input-row">
+                    <input type="text" id="student-id" placeholder="Student ID" required>
+
+                    <input type="text" id="name" placeholder="Student Name" required>
+                    <input type="text" id="roll" placeholder="Roll Number" required>
+                </div>
+                <div class="input-row">
+                    <input type="text" id="class" placeholder="Class" required>
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+                <div class="button-row">
+                    <button type="submit">Add Student</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- Modal for Total Students -->
+    <!-- Modal for Total Students -->
+<div id="total-student-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('total-student-modal')">&times;</span>
+        <h2>Total Students</h2>
+        <table id="student-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Address</th>
+                    <th>Class</th>
+                    <th>Student ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Student data will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+    <!-- Modal for Attendance & Marks -->
+    <div id="attendance-marks-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('attendance-marks-modal')">&times;</span>
+            <h2>Attendance & Marks</h2>
+            <p>Feature coming soon...</p>
+        </div>
+    </div>
+
+    <!-- Modal for Individual Student Profile -->
+    <div id="student-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('student-profile-modal')">&times;</span>
+            <h2>Individual Student Profile</h2>
+            <input type="text" id="search-roll" placeholder="Enter Roll Number">
+            <button onclick="getStudentProfile()">Search</button>
+            <div id="profile-result"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
